@@ -1,4 +1,0 @@
-Championship Position every year - https://ergast.com/api/f1/drivers/max_verstappen/driverStandings.json
-Races won - https://ergast.com/api/f1/2022/drivers/max_verstappen/results/1.json
-Poles - https://ergast.com/api/f1/drivers/max_verstappen/qualifying/1.json
-Race Results = https://ergast.com/api/f1/drivers/max_verstappen/results.json

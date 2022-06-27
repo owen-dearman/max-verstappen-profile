@@ -2,8 +2,8 @@ import { useReducer } from "react";
 import { Biography } from "./Biography";
 import { FamousQuote } from "./FamousQuote";
 import { Header } from "./Header";
-import { reducerFunction } from "./reducerFunction";
-import { emptyState } from "./StateAndAction";
+import { reducerFunction } from "./utils/reducerFunction";
+import { emptyState } from "./utils/StateAndAction";
 import { Statistics } from "./Statistics";
 
 function App(): JSX.Element {

@@ -1,4 +1,4 @@
-import { BioType } from "./interfaces";
+import { BioType } from "./utils/interfaces";
 import { dateFormatter } from "./utils/dateFormatter";
 
 interface BiographyProps {

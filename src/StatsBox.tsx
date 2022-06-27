@@ -1,4 +1,4 @@
-import { RaceDataType } from "./interfaces";
+import { RaceDataType } from "./utils/interfaces";
 
 interface StatsBoxProps {
   raceData: RaceDataType | null;
