@@ -13,7 +13,17 @@ export type RaceDataType = {
   poles: number;
 };
 
-export type StandingsType = { championshipWins: number; totalPoints: number };
+export type StandingsType = {
+  championshipWins: number;
+  totalPoints: number;
+  championshipHistory: championshipHistoryType;
+};
+
+export type championshipHistoryType = {
+  years: number[];
+  positions: number[];
+  wins: number[];
+};
 
 export type RacesType = {
   races: number;

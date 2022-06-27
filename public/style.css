@@ -110,3 +110,8 @@ footer {
 a {
     color: black;
 }
+
+.graph-container {
+    display: flex;
+    flex-direction: row;
+}

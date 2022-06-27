@@ -9,6 +9,7 @@ import { LinkList } from "./LinkList";
 import { fetchRaceData } from "./utils/fetchRaceData";
 import { fetchBio } from "./utils/fetchBio";
 import { Footer } from "./Footer";
+import { Graph } from "./Graph";
 
 function App(): JSX.Element {
   const [{ isLoading, race, bio }, dispatch] = useReducer(
@@ -36,6 +37,7 @@ function App(): JSX.Element {
           <Statistics raceData={race} />
           <Biography bioData={bio} />
           <FamousQuote />
+          {race && <Graph data={race.standings.championshipHistory} />}
           {bio && <LinkList wikiLink={bio.info} />}
         </>
       )}
