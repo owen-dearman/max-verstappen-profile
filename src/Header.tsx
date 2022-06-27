@@ -2,10 +2,22 @@ export function Header() {
   return (
     <header>
       <img
-        className="header-image"
-        src="headerImage.png"
-        alt="Max Verstappen, Red Bull Racing"
+        className="header-title-image"
+        src="./images/headerImage.png"
+        alt="the name Max Verstappen in bold text with a gradient from white to orange"
       />
+      <div className="header-sub-container">
+        <img
+          className="header-team-logo"
+          src="./images/redBullLogo.png"
+          alt="Red Bull Racing team logo"
+        />
+        <img
+          className="header-profile-image"
+          src="./images/maxVerstappen.jpg"
+          alt="Max Verstappen cheering a win with fist raised"
+        />
+      </div>
     </header>
   );
 }
