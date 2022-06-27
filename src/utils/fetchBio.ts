@@ -1,7 +1,7 @@
 import axios from "axios";
 import { BioType } from "./interfaces";
 
-export async function fetchBio() {
+export async function fetchBio(): Promise<BioType> {
   const response = await axios.get(
     "https://ergast.com/api/f1/drivers/max_verstappen.json"
   );

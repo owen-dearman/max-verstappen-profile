@@ -1,4 +1,4 @@
-export function dateFormatter(date: string) {
+export function dateFormatter(date: string): string {
   let formattedDate = "unknown";
   if (!/\d\d\d\d-\d\d-\d\d/.test(date)) {
     return formattedDate;

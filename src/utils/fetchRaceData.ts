@@ -8,13 +8,13 @@ export async function fetchRaceData(): Promise<RaceDataType> {
   return { standings: standingsData, races: raceData, poles: poleData };
 }
 
+//Fetch all required data
+
 const fetchStandings = async (): Promise<StandingsType> => {
   const standingsResponse = await axios.get(
     "https://ergast.com/api/f1/drivers/max_verstappen/driverStandings.json"
   );
-  const standingsList =
-    standingsResponse.data.MRData.StandingsTable.StandingsLists;
-  return organiseStandings(standingsList);
+  return organiseStandings(standingsResponse);
 };
 
 const fetchRaces = async (): Promise<RacesType> => {
@@ -42,11 +42,14 @@ const fetchPoles = async (): Promise<number> => {
   const polesResponse = await axios.get(
     "https://ergast.com/api/f1/drivers/max_verstappen/qualifying/1.json"
   );
-  const polesList = polesResponse.data.MRData.RaceTable.Races;
-  return organisePoles(polesList);
+  return organisePoles(polesResponse);
 };
 
-function organiseStandings(championshipHistory: any[]): StandingsType {
+//Retrieve required data from Axios responses
+
+function organiseStandings(response: AxiosResponse<any, any>): StandingsType {
+  const championshipHistory =
+    response.data.MRData.StandingsTable.StandingsLists;
   let championshipWins = 0;
   let totalPoints = 0;
   for (const seasonData of championshipHistory) {
@@ -77,7 +80,8 @@ function organiseRaces(
   };
 }
 
-function organisePoles(poleHistory: any[]): number {
+function organisePoles(response: AxiosResponse<any, any>): number {
+  const poleHistory = response.data.MRData.RaceTable.Races;
   let poles = 0;
   for (const race of poleHistory) {
     race.QualifyingResults[0].position === "1" && poles++;
