@@ -1,8 +1,8 @@
 import { Dispatch, useEffect } from "react";
-import { fetchBio } from "./fetchBio";
-import { fetchRaceData } from "./fetchRaceData";
-import { RaceDataType } from "./interfaces";
-import { Action } from "./StateAndAction";
+import { fetchBio } from "./utils/fetchBio";
+import { fetchRaceData } from "./utils/fetchRaceData";
+import { RaceDataType } from "./utils/interfaces";
+import { Action } from "./utils/StateAndAction";
 import { StatsBox } from "./StatsBox";
 
 interface StatisticsProps {

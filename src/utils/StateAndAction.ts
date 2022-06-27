@@ -9,4 +9,4 @@ export type State = {
 export type Action =
   | { type: "request" }
   | { type: "fetchData"; raceData: RaceDataType; bioData: BioType };
-export const emptyState: State = { isLoading: false, bio: null, race: null };
+export const emptyState: State = { isLoading: true, bio: null, race: null };
