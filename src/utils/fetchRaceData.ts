@@ -40,7 +40,7 @@ const fetchRaces = async (): Promise<RacesType> => {
 
 const fetchPoles = async (): Promise<number> => {
   const polesResponse = await axios.get(
-    "https://ergast.com/api/f1/drivers/max_verstappen/qualifying/1.json"
+    "https://ergast.com/api/f1/drivers/max_verstappen/grid/1/results.json"
   );
   return organisePoles(polesResponse);
 };
@@ -96,10 +96,6 @@ function organiseRaces(
 }
 
 function organisePoles(response: AxiosResponse<any, any>): number {
-  const poleHistory = response.data.MRData.RaceTable.Races;
-  let poles = 0;
-  for (const race of poleHistory) {
-    race.QualifyingResults[0].position === "1" && poles++;
-  }
-  return poles;
+  const poles = response.data.MRData.total;
+  return parseInt(poles);
 }

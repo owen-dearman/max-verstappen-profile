@@ -2,6 +2,7 @@ body {
     margin: 1px;
     background-image: linear-gradient(to bottom right, #080650, #5956b0);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
 }
 
 header {

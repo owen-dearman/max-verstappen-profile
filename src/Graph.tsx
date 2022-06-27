@@ -1,4 +1,5 @@
 import Plot from "react-plotly.js";
+import { getCurrentYear } from "./utils/getCurrentYear";
 import { championshipHistoryType } from "./utils/interfaces";
 
 interface GraphProps {
@@ -6,7 +7,7 @@ interface GraphProps {
 }
 
 export function Graph({ data }: GraphProps) {
-  const currentYear = new Date().getFullYear();
+  const currentYear = getCurrentYear();
   return (
     <section className="graph-container">
       <Plot
