@@ -48,16 +48,31 @@ const fetchPoles = async (): Promise<number> => {
 //Retrieve required data from Axios responses
 
 function organiseStandings(response: AxiosResponse<any, any>): StandingsType {
+  let yearsActive = [];
+  let championshipPositions = [];
+  let raceWins = [];
   const championshipHistory =
     response.data.MRData.StandingsTable.StandingsLists;
   let championshipWins = 0;
   let totalPoints = 0;
   for (const seasonData of championshipHistory) {
+    yearsActive.push(parseInt(seasonData.season));
     const season = seasonData.DriverStandings[0];
-    season.position === "1" && championshipWins++;
+    const position = season.position;
+    championshipPositions.push(parseInt(position));
+    raceWins.push(parseInt(season.wins));
+    position === "1" && championshipWins++;
     totalPoints += parseInt(season.points);
   }
-  return { championshipWins: championshipWins, totalPoints: totalPoints };
+  return {
+    championshipWins: championshipWins,
+    totalPoints: totalPoints,
+    championshipHistory: {
+      years: yearsActive,
+      positions: championshipPositions,
+      wins: raceWins,
+    },
+  };
 }
 
 function organiseRaces(
