@@ -5,11 +5,14 @@ import { emptyState } from "./StateAndAction";
 import { Statistics } from "./Statistics";
 
 function App(): JSX.Element {
-  const [fullState, dispatch] = useReducer(reducerFunction, emptyState);
+  const [{ isLoading, race }, dispatch] = useReducer(
+    reducerFunction,
+    emptyState
+  );
   return (
     <>
       <Header />
-      <Statistics data={fullState} dispatch={dispatch} />
+      <Statistics raceData={race} isLoading={isLoading} dispatch={dispatch} />
     </>
   );
 }
