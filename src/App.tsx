@@ -1,12 +1,13 @@
 import { useReducer } from "react";
 import { Biography } from "./Biography";
+import { FamousQuote } from "./FamousQuote";
 import { Header } from "./Header";
 import { reducerFunction } from "./reducerFunction";
 import { emptyState } from "./StateAndAction";
 import { Statistics } from "./Statistics";
 
 function App(): JSX.Element {
-  const [{ isLoading, race }, dispatch] = useReducer(
+  const [{ isLoading, race, bio }, dispatch] = useReducer(
     reducerFunction,
     emptyState
   );
@@ -14,7 +15,8 @@ function App(): JSX.Element {
     <>
       <Header />
       <Statistics raceData={race} isLoading={isLoading} dispatch={dispatch} />
-      <Biography />
+      <Biography bioData={bio} />
+      <FamousQuote />
     </>
   );
 }
