@@ -1,0 +1,12 @@
+body {
+    background-color: #000B8D;
+}
+
+header {
+    display: flex;
+}
+
+.header-image {
+    width: 100%;
+    object-fit: fill;
+}
