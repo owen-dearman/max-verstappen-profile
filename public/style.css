@@ -1,10 +1,7 @@
-html {
-    height: 100%
-}
-
 body {
     margin: 0;
     background-image: linear-gradient(to bottom right, #080650, #5956b0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 header {
@@ -33,4 +30,38 @@ header {
     border-radius: 50%;
     border: 4px solid black;
     margin-right: 15%;
+}
+
+.statsbox-container {
+    display: flex;
+    width: 40%;
+    margin-top: -10%;
+    margin-left: 5%;
+    flex-direction: column;
+    border: 4px solid black;
+    border-radius: 15%;
+    color: white;
+    padding: 2%;
+}
+
+.statsbox-title {
+    text-align: center;
+    font-size: 50px;
+    margin-top: -2%;
+}
+
+.statsbox-grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 1%;
+    font-size: medium;
+
+}
+
+.statsbox-grid-tag {
+    text-align: left;
+}
+
+.statsbox-grid-value {
+    text-align: right;
 }

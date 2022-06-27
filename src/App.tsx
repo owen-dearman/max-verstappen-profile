@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { Biography } from "./Biography";
 import { Header } from "./Header";
 import { reducerFunction } from "./reducerFunction";
 import { emptyState } from "./StateAndAction";
@@ -13,6 +14,7 @@ function App(): JSX.Element {
     <>
       <Header />
       <Statistics raceData={race} isLoading={isLoading} dispatch={dispatch} />
+      <Biography />
     </>
   );
 }
