@@ -8,6 +8,7 @@ import { Statistics } from "./Statistics";
 import { LinkList } from "./LinkList";
 import { fetchRaceData } from "./utils/fetchRaceData";
 import { fetchBio } from "./utils/fetchBio";
+import { Footer } from "./Footer";
 
 function App(): JSX.Element {
   const [{ isLoading, race, bio }, dispatch] = useReducer(
@@ -38,6 +39,7 @@ function App(): JSX.Element {
           {bio && <LinkList wikiLink={bio.info} />}
         </>
       )}
+      <Footer />
     </>
   );
 }

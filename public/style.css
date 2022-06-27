@@ -96,8 +96,17 @@ header {
     font-size: large;
     margin: 1%;
     padding: 0.5%;
+    border-radius: 25%;
 }
 
 .linklist-button:hover {
     background-color: #080650;
+}
+
+footer {
+    text-align: center;
+}
+
+a {
+    color: black;
 }
