@@ -29,7 +29,6 @@ export type RacesType = {
   races: number;
   raceWins: number;
   podiums: number;
-  debut: string;
 };
 
 export interface LinkType {
