@@ -90,14 +90,10 @@ function organiseRaces(
   let numFirsts = firstHistory.data.MRData.total;
   let numSeconds = secondHistory.data.MRData.total;
   let numThirds = thirdResponse.data.MRData.total;
-  const races = raceHistory.data.MRData.RaceTable.Races;
-  //create debut string
-  const debut = `${races[0].season}, ${races[0].raceName}`;
   return {
     races: parseInt(numRaces),
     raceWins: parseInt(numFirsts),
     podiums: parseInt(numFirsts) + parseInt(numSeconds) + parseInt(numThirds),
-    debut: debut,
   };
 }
 
