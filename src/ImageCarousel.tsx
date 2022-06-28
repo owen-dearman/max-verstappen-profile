@@ -6,13 +6,21 @@ export function ImageCarousel() {
   const [width, setWidth] = useState<number>(0);
   const carousel = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  function updateWindowSize(carousel: React.RefObject<HTMLDivElement>) {
     if (carousel.current !== null) {
       const fullWidth = carousel.current.scrollWidth;
       const currentWidth = carousel.current.offsetWidth;
       setWidth(fullWidth - currentWidth);
     }
-  }, []);
+  }
+
+  useEffect(() => {
+    console.log("useeffect");
+    const callUpdateWindowSize = () => updateWindowSize(carousel);
+    updateWindowSize(carousel);
+    window.addEventListener("resize", callUpdateWindowSize);
+    return () => window.removeEventListener("resize", callUpdateWindowSize);
+  });
 
   return (
     <>
