@@ -252,14 +252,6 @@ a {
 }
 
 @media screen and (max-width: 1100px) {
-
-    .header-sub-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: flex-start;
-    }
-
     .subpage-container {
         display: flex;
         flex-direction: column;
