@@ -14,11 +14,11 @@ export type State = {
 export type Action =
   | { type: "request" }
   | {
-    type: "fetchData";
-    careerStatistics: CareerStatistcsType[];
-    bioData: BioType;
-    graphData: ChampionshipHistoryType;
-  };
+      type: "fetchData";
+      careerStatistics: CareerStatistcsType[];
+      bioData: BioType;
+      graphData: ChampionshipHistoryType;
+    };
 export const emptyState: State = {
   isLoading: true,
   bio: null,
