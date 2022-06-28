@@ -13,6 +13,7 @@ import { ImageCarousel } from "./ImageCarousel";
 import { CareerStatistcs } from "./utils/interfaces";
 import { Leaderboard } from "./Leaderboard";
 import { percentageOf } from "./utils/percentageOf";
+import { FamousVideo } from "./FamousVideo";
 
 function App(): JSX.Element {
   const [{ isLoading, careerStatistics, bio, graphData }, dispatch] =
@@ -71,10 +72,11 @@ function App(): JSX.Element {
       ) : (
         <>
           <div className="subpage-container">
-            {careerStatistics && <Leaderboard data={careerStatistics} />}
             <Biography bioData={bio} />
+            {careerStatistics && <Leaderboard data={careerStatistics} />}
           </div>
           <FamousQuote />
+          <FamousVideo />
           <ImageCarousel />
           {graphData && <Graph data={graphData} />}
           {bio && <LinkList wikiLink={bio.info} />}

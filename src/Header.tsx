@@ -8,14 +8,14 @@ export function Header() {
       />
       <div className="header-sub-container">
         <img
-          className="header-team-logo"
-          src="./images/redBullLogo.png"
-          alt="Red Bull Racing team logo"
-        />
-        <img
           className="header-profile-image"
           src="./images/maxVerstappen.jpg"
           alt="Max Verstappen cheering a win with fist raised"
+        />
+        <img
+          className="header-team-logo"
+          src="./images/redBullLogo.png"
+          alt="Red Bull Racing team logo"
         />
       </div>
     </header>
