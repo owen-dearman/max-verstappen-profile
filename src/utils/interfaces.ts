@@ -37,3 +37,5 @@ export interface LinkType {
   title: string;
   url: string;
 }
+
+export type CareerStatistcs = { id: number; title: string; value: number }[];
