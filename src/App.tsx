@@ -11,7 +11,7 @@ import { Footer } from "./Footer";
 import { Graph } from "./Graph";
 import { ImageCarousel } from "./ImageCarousel";
 import { CareerStatistcs } from "./utils/interfaces";
-import { Leaderboard } from "./utils/Leaderboard";
+import { Leaderboard } from "./Leaderboard";
 import { percentageOf } from "./utils/percentageOf";
 
 function App(): JSX.Element {
