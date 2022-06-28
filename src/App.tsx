@@ -10,6 +10,7 @@ import { fetchRaceData } from "./utils/fetchRaceData";
 import { fetchBio } from "./utils/fetchBio";
 import { Footer } from "./Footer";
 import { Graph } from "./Graph";
+import { ImageCarousel } from "./ImageCarousel";
 
 function App(): JSX.Element {
   const [{ isLoading, race, bio }, dispatch] = useReducer(
@@ -34,9 +35,12 @@ function App(): JSX.Element {
         <h1>Data Loading...</h1>
       ) : (
         <>
-          <Statistics raceData={race} />
-          <Biography bioData={bio} />
+          <div className="subpage-container">
+            <Statistics raceData={race} />
+            <Biography bioData={bio} />
+          </div>
           <FamousQuote />
+          <ImageCarousel />
           {race && <Graph data={race.standings.championshipHistory} />}
           {bio && <LinkList wikiLink={bio.info} />}
         </>
