@@ -16,10 +16,10 @@ export type RaceDataType = {
 export type StandingsType = {
   championshipWins: number;
   totalPoints: number;
-  championshipHistory: championshipHistoryType;
+  championshipHistory: ChampionshipHistoryType;
 };
 
-export type championshipHistoryType = {
+export type ChampionshipHistoryType = {
   years: number[];
   positions: number[];
   wins: number[];
@@ -38,4 +38,8 @@ export interface LinkType {
   url: string;
 }
 
-export type CareerStatistcs = { id: number; title: string; value: number }[];
+export type CareerStatistcsType = {
+  id: number;
+  title: string;
+  value: number;
+};

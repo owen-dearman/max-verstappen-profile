@@ -51,17 +51,22 @@ function organiseStandings(response: AxiosResponse<any, any>): StandingsType {
   let yearsActive = [];
   let championshipPositions = [];
   let raceWins = [];
-  const championshipHistory =
-    response.data.MRData.StandingsTable.StandingsLists;
   let championshipWins = 0;
   let totalPoints = 0;
+  const championshipHistory =
+    response.data.MRData.StandingsTable.StandingsLists;
   for (const seasonData of championshipHistory) {
+    //add for graph data
     yearsActive.push(parseInt(seasonData.season));
     const season = seasonData.DriverStandings[0];
     const position = season.position;
+    //add for graph data
     championshipPositions.push(parseInt(position));
+    //add for graph data
     raceWins.push(parseInt(season.wins));
+    //add to championship wins
     position === "1" && championshipWins++;
+    //add up points
     totalPoints += parseInt(season.points);
   }
   return {
@@ -86,6 +91,7 @@ function organiseRaces(
   let numSeconds = secondHistory.data.MRData.total;
   let numThirds = thirdResponse.data.MRData.total;
   const races = raceHistory.data.MRData.RaceTable.Races;
+  //create debut string
   const debut = `${races[0].season}, ${races[0].raceName}`;
   return {
     races: parseInt(numRaces),

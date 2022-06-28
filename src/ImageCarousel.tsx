@@ -15,7 +15,6 @@ export function ImageCarousel() {
   }
 
   useEffect(() => {
-    console.log("useeffect");
     const callUpdateWindowSize = () => updateWindowSize(carousel);
     updateWindowSize(carousel);
     window.addEventListener("resize", callUpdateWindowSize);

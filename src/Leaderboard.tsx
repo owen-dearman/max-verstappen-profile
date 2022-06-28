@@ -1,14 +1,14 @@
-import { CareerStatistcs } from "./utils/interfaces";
+import { CareerStatistcsType } from "./utils/interfaces";
 
 interface LeaderboardProps {
-  data: CareerStatistcs;
+  data: CareerStatistcsType[];
 }
 
 export function Leaderboard({ data }: LeaderboardProps): JSX.Element {
   return (
     <section className="leaderboard-container">
       <div className="leaderboard-title">CAREER STATISTICS</div>
-      {data.map((stat) => {
+      {data.map((stat: CareerStatistcsType) => {
         return (
           <div key={stat.id} className="driverContainer">
             <div className="driverLeft">

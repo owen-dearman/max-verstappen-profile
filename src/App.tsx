@@ -10,7 +10,7 @@ import { fetchBio } from "./utils/fetchBio";
 import { Footer } from "./Footer";
 import { Graph } from "./Graph";
 import { ImageCarousel } from "./ImageCarousel";
-import { CareerStatistcs } from "./utils/interfaces";
+import { CareerStatistcsType } from "./utils/interfaces";
 import { Leaderboard } from "./Leaderboard";
 import { percentageOf } from "./utils/percentageOf";
 import { FamousVideo } from "./FamousVideo";
@@ -24,9 +24,8 @@ function App(): JSX.Element {
       dispatch({ type: "request" });
       const bioData = await fetchBio();
       const raceData = await fetchRaceData();
-
       const graphData = raceData.standings.championshipHistory;
-      const careerStatistics: CareerStatistcs = [
+      const careerStatistics: CareerStatistcsType[] = [
         {
           id: 1,
           title: "Championships",
@@ -72,7 +71,7 @@ function App(): JSX.Element {
       ) : (
         <>
           <div className="subpage-container">
-            <Biography bioData={bio} />
+            {bio && <Biography bioData={bio} />}
             {careerStatistics && <Leaderboard data={careerStatistics} />}
           </div>
           <FamousQuote />

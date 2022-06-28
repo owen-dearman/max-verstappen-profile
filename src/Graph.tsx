@@ -1,9 +1,9 @@
 import Plot from "react-plotly.js";
 import { getCurrentYear } from "./utils/getCurrentYear";
-import { championshipHistoryType } from "./utils/interfaces";
+import { ChampionshipHistoryType } from "./utils/interfaces";
 
 interface GraphProps {
-  data: championshipHistoryType;
+  data: ChampionshipHistoryType;
 }
 
 export function Graph({ data }: GraphProps) {
