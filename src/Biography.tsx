@@ -8,7 +8,6 @@ interface BiographyProps {
 export function Biography({ bioData }: BiographyProps): JSX.Element {
   return (
     <section className="bio-container">
-      <h1 className="statsbox-title">Biography</h1>
       <div className="grid-container">
         <h2 className="grid-tag">Name:</h2>
         <h2 className="grid-value">{bioData?.name}</h2>
