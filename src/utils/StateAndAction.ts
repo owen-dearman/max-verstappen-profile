@@ -1,12 +1,27 @@
-import { BioType, RaceDataType } from "./interfaces";
+import {
+  BioType,
+  CareerStatistcs,
+  championshipHistoryType,
+} from "./interfaces";
 
 export type State = {
   bio: BioType | null;
-  race: RaceDataType | null;
+  careerStatistics: CareerStatistcs | null;
+  graphData: championshipHistoryType | null;
   isLoading: boolean;
 };
 
 export type Action =
   | { type: "request" }
-  | { type: "fetchData"; raceData: RaceDataType; bioData: BioType };
-export const emptyState: State = { isLoading: true, bio: null, race: null };
+  | {
+      type: "fetchData";
+      careerStatistics: CareerStatistcs;
+      bioData: BioType;
+      graphData: championshipHistoryType;
+    };
+export const emptyState: State = {
+  isLoading: true,
+  bio: null,
+  careerStatistics: null,
+  graphData: null,
+};

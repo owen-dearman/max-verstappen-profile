@@ -9,7 +9,8 @@ export const reducerFunction = (state: State, action: Action) => {
         ...state,
         isLoading: false,
         bio: action.bioData,
-        race: action.raceData,
+        careerStatistics: action.careerStatistics,
+        graphData: action.graphData,
       };
   }
 };

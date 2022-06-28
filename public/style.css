@@ -1,8 +1,8 @@
 body {
     margin: 1px;
-    background-image: linear-gradient(to bottom right, #080650, #5956b0);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     overflow-x: hidden;
+    background-image: linear-gradient(to bottom right, #080650, #5956b0);
 }
 
 header {
@@ -27,10 +27,10 @@ header {
 }
 
 .header-profile-image {
-    width: 20%;
+    width: 15%;
     border-radius: 50%;
     border: 4px solid black;
-    margin-right: 15%;
+    margin-right: 18%;
 }
 
 .subpage-container {
@@ -38,23 +38,6 @@ header {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 1%
-}
-
-.statsbox-container {
-    display: flex;
-    margin-left: 10%;
-    margin-top: -20%;
-    flex-direction: column;
-    border: 4px solid black;
-    border-radius: 15%;
-    color: white;
-    padding: 2%;
-}
-
-.statsbox-title {
-    text-align: center;
-    font-size: 50px;
-    margin-top: -2%;
 }
 
 .grid-container {
@@ -73,13 +56,12 @@ header {
 }
 
 .bio-container {
+    width: 30%;
     display: flex;
     margin-right: 10%;
     flex-direction: column;
-    border: 4px solid black;
-    border-radius: 15%;
     color: white;
-    padding: 2%;
+    padding: 1%;
 }
 
 .quote-container {
@@ -96,15 +78,49 @@ header {
 
 .linklist-button {
     background-color: #5956b0;
-    color: white;
-    font-size: large;
-    margin: 1%;
-    padding: 0.5%;
-    border-radius: 25%;
+    border: 0;
+    margin: 0 1%;
+    border-radius: 56px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    outline: 0;
+    padding: 16px 21px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.linklist-button:before {
+    background-color: initial;
+    background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+    border-radius: 125px;
+    content: "";
+    height: 50%;
+    left: 4%;
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    transition: all .3s;
+    width: 92%;
 }
 
 .linklist-button:hover {
-    background-color: #080650;
+    box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+    transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .linklist-button {
+        padding: 16px 48px;
+    }
 }
 
 footer {
@@ -143,4 +159,94 @@ a {
     border-radius: 10%;
     pointer-events: none;
     object-fit: contain;
+}
+
+.leaderboard-container {
+    width: 50%;
+    margin-left: 10%;
+}
+
+.leaderboard-title {
+    width: 80%;
+    border-top: 3px solid red;
+    margin-top: 3px;
+    text-align: center;
+    background: black;
+    color: white;
+    font-size: 50px;
+}
+
+.driverContainer {
+    display: flex;
+    width: 80%;
+    background: transparent;
+    transition: all 0.5;
+    color: white
+}
+
+.driverLeft {
+    display: flex;
+    width: 75%;
+    background: black;
+}
+
+.driverRight {
+    width: 25%;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: 40px;
+    padding: 3px;
+    text-align: right;
+}
+
+.line {
+    width: 5%;
+    height: 80%;
+    position: relative;
+    top: 5px;
+    left: 10px;
+    margin-right: 15px;
+}
+
+.driverPosition {
+    background: white;
+    color: black;
+    height: 90%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 1%;
+}
+
+.driverName {
+    width: 70%;
+    background: black;
+    margin: 2px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: left;
+}
+
+
+.colour1 {
+    background-color: #080650;
+}
+
+.colour2 {
+    background-color: #00d2be;
+}
+
+.colour3 {
+    background-color: #dc0000;
+}
+
+.colour4 {
+    background-color: #ff8700;
+}
+
+.colour5 {
+    background-color: #ffffff
+}
+
+.colour6 {
+    background-color: #bd9e57;
 }
